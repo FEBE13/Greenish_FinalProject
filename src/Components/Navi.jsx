@@ -13,7 +13,7 @@ function Navi() {
   return (
     <Navbar style={{height:'fit-content',backgroundColor:'#EFF7F2',padding:'20px 0'}} expand="lg">
       <Container className='contain' >
-        <Navbar.Brand ><Link><img src={logo} width={180}/></Link></Navbar.Brand>
+        <Navbar.Brand ><Link to={"/"}><img src={logo} width={180}/></Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Container className='wrap-collapse'>
         <Navbar.Collapse id="navbarScroll" style={{marginTop:'5px'}} >
@@ -24,9 +24,9 @@ function Navi() {
             navbarScroll
             
           >
-            <Nav.Link><Link className='link'>About</Link></Nav.Link>
-            <Nav.Link><Link className='link'>Event</Link></Nav.Link>
-            <Nav.Link><Link className='link'>News</Link></Nav.Link>
+            <Nav.Link><Link to={"/aboutus"} className='link'>About</Link></Nav.Link>
+            <Nav.Link><Link to={"/event"} className='link'>Event</Link></Nav.Link>
+            <Nav.Link><Link to={"/news"} className='link'>News</Link></Nav.Link>
           </Nav>
           <Container style={{width:'fit-content'}}>
           {/* <NavDropdown title={gbr} id="navbarScrollingDropdown">
