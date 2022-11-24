@@ -46,8 +46,6 @@
    .img-banner {
       text-align: center;
    }
-   .img-banner > img {
-   }
 }
 
 @media only screen and (max-width: 546px) {
