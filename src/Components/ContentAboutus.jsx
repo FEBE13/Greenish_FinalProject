@@ -36,9 +36,12 @@ function ContentAboutus() {
                            Sebagai upaya menjaga kelestarian hutan, kami
                            melakukan kegiatan menanam sejuta pohon, tidak
                            membuka lahan dengan membakar hutan, tidak melakukan
-                           penebangan pohon secara liar, melaporkan pada
-                           pihak berwajib jika mengetahui adanya praktik illegal
-                           logging dan melakukan sosialisasi tentang bahayanya jika tidak menjaga alam sekitar seperti bisa terkena bencana alam banjir, longsor dan pemanasan global (global warming).
+                           penebangan pohon secara liar, melaporkan pada pihak
+                           berwajib jika mengetahui adanya praktik illegal
+                           logging dan melakukan sosialisasi tentang bahayanya
+                           jika tidak menjaga alam sekitar seperti bisa terkena
+                           bencana alam banjir, longsor dan pemanasan global
+                           (global warming).
                         </p>
                      </div>
                   </div>
@@ -82,7 +85,6 @@ function ContentAboutus() {
                </div>
             </div>
 
-
             <div
                className="card mb-12 content-about-us"
                style={{ maxWidth: "max-content" }}
@@ -101,7 +103,14 @@ function ContentAboutus() {
                            Kami berusaha membantu sesama ketika mendapat musibah
                         </h5>
                         <p className="card-text align-middle">
-                           Sebagai upaya membantu sesama yang sedang terkena musibah, kami melakukan event untuk mendapatkan relawan yang siap dikirim ke tempat yang terkena dampak musibah, lalu kami melakukan evakuasi kepada sesama yang sedang terkena dampak musibah ke tempat pengungsian dan membagikan perlengkapan atau kebutuhan yang dibutuhkan oleh sesama yang sedang terkena musibah
+                           Sebagai upaya membantu sesama yang sedang terkena
+                           musibah, kami melakukan event untuk mendapatkan
+                           relawan yang siap dikirim ke tempat yang terkena
+                           dampak musibah, lalu kami melakukan evakuasi kepada
+                           sesama yang sedang terkena dampak musibah ke tempat
+                           pengungsian dan membagikan perlengkapan atau
+                           kebutuhan yang dibutuhkan oleh sesama yang sedang
+                           terkena musibah
                         </p>
                      </div>
                   </div>
@@ -116,9 +125,9 @@ function ContentAboutus() {
                   height="450"
                   src="https://www.youtube.com/embed/bFg2iDSjuO4"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                ></iframe>
             </center>
          </div>
