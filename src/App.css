@@ -82,11 +82,11 @@
    border-radius: 5px;
 }
 @media only screen and (max-width: 992px) {
-  .img-event-homepage {
-    max-width: 100%;
-    max-height: 90%;
-    filter: brightness(50%);
- }
+   .img-event-homepage {
+      max-width: 100%;
+      max-height: 90%;
+      filter: brightness(50%);
+   }
 }
 
 /* style component banner join home page */
@@ -133,23 +133,52 @@ h2 {
 }
 /* style preview about us homepage */
 .group-card-aboutus {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
 }
 .content-aboutus {
-  margin-top: 50px;
-  text-align: center;
-  margin-bottom: 30px;
-  background-color: white;
-  border-radius: 10px;
+   margin-top: 50px;
+   text-align: center;
+   margin-bottom: 30px;
+   background-color: white;
+   border-radius: 10px;
 }
 
 .about-us-list {
-  margin-bottom: 15px;
+   margin-bottom: 15px;
 }
 
 /* style footer */
 .footer-container {
-  margin-top: 70px;
+   margin-top: 70px;
+}
+
+/* style about us page */
+.teksAboutus-1 {
+   margin: 30px 0px;
+   text-align: center;
+}
+.content-about-us {
+   border: 0px;
+   margin-bottom: 50px;
+   display: flex;
+}
+
+.content-about-us > .text-content {
+   align-items: center;
+}
+.content-teks {
+   padding: 0px;
+   padding: 0px 10px;
+}
+.teks3 {
+   margin-top: 40px;
+}
+
+@media only screen and (max-width: 724px) {
+   .video-about-us > center > .video-greenish {
+      max-width: max-content;
+      max-height: 300px;
+   }
 }
