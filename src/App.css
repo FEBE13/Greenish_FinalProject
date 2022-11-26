@@ -182,3 +182,9 @@ h2 {
       max-height: 300px;
    }
 }
+
+
+.carde:hover{
+   box-shadow:  7px 7px 14px #cccccc,
+             -7px -7px 14px #f4f4f4;
+}
