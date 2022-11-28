@@ -35,19 +35,29 @@
    border-radius: 0px 0px 50px 0px;
    color: white;
 }
+.banner-awal{
+   padding: 80px 0;
+}
 
-.text-banner {
-   margin-top: 45px;
+.text-banner > h1,h3,div {
+   text-align: left;
 }
 @media only screen and (max-width: 992px) {
-   .text-banner {
+   .text-banner > h1,h3,div {
       text-align: center;
    }
    .img-banner {
       text-align: center;
    }
+   .banner-awal{
+      padding: 0;
+   }
 }
-
+.jelajahi:hover{
+   border-radius: 30px;
+   transition: ease-in-out 0.5s;
+   background-color: #0284c7;
+}
 @media only screen and (max-width: 546px) {
    .img-banner > img {
       width: 40vh;
