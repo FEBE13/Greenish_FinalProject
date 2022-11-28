@@ -188,3 +188,16 @@ h2 {
    box-shadow:  7px 7px 14px #cccccc,
              -7px -7px 14px #f4f4f4;
 }
+.Content1NewsPage{
+   text-align: center;
+   padding: 100px;
+   margin: 50px;
+}
+.Tutorial1NewsPage{
+   text-align: center;
+   padding: 100px;
+   margin: 50px;
+}
+.col{
+   text-align: center;
+}
