@@ -1,6 +1,6 @@
-function ArtikelNewsPage () {
-    return(
-        <div className="container">
+function ArtikelNewsPage() {
+   return (
+      <div className="container">
          <div className="row">
             <div className="col-lg-6 col-xs-12 artikel-news-page1">
                <div>
@@ -95,7 +95,7 @@ function ArtikelNewsPage () {
                </div>
             </div>
          </div>
-      </div>
-    )
+      </div>
+   )
 }
 export default ArtikelNewsPage
