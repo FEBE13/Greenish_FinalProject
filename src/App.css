@@ -219,16 +219,43 @@ h2 {
    box-shadow:  7px 7px 14px #cccccc,
              -7px -7px 14px #f4f4f4;
 }
-.Content1NewsPage{
+
+.Content1NewsPage {
    text-align: center;
    padding: 100px;
    margin: 50px;
 }
-.Tutorial1NewsPage{
+.Tutorial1NewsPage {
    text-align: center;
-   padding: 100px;
-   margin: 50px;
+   margin-top: 50px
+   /* padding: 100px;
+   margin: 50px; */
 }
-.col{
+/* .col{
    text-align: center;
+} */
+.artikel-news-page-kanan {
+   margin-top: 10px;
 }
+.btn-readmore-news {
+   background-color: rgb(56, 167, 85);
+   color: white;
+   padding: 6px;
+}
+.img-artikel-newspage-kanan{
+   margin-top: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+   .artikel-news-page1 > h1 {
+      text-align: left;
+   }
+   .artikel-news-page1 > img {
+      float: left;
+      padding: 10px 0px;
+   }
+   .artikel-news-page1 > p {
+      text-align: left;
+   }
+}
+
