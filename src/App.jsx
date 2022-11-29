@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/event" element={<Event />} />
-        <Route exact path="/detail/:id" element={<DetailEvent/>} />
+        <Route exact path="/event/:id" element={<DetailEvent/>} />
         {/* <Route exact path="/addevent" element={<AddEvent />} /> */}
         {/* <Route path="/detailartikel/:id" element={<DetailArticle />} /> */}
         <Route path="/aboutus" element={<Aboutus />} />
