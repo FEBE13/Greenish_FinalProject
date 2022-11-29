@@ -35,19 +35,50 @@
    border-radius: 0px 0px 50px 0px;
    color: white;
 }
-
-.text-banner {
-   margin-top: 45px;
+.banner-awal{
+   padding: 100px 0;
+   max-width: 900px;
 }
-@media only screen and (max-width: 992px) {
-   .text-banner {
-      text-align: center;
+ .text-banner{
+   margin: auto;
+   padding-top: 60px;
+      /* padding-right: 80px; */
    }
    .img-banner {
+      margin: auto;
+   }
+
+
+.text-banner > h1,h3,div {
+   text-align: left;
+}
+@media only screen and (max-width: 576px) {
+}
+@media only screen and (max-width: 992px) {
+   .text-banner > h1,h3,div {
       text-align: center;
    }
+   .text-banner{
+      max-width: 300px;
+      margin: auto;
+      padding-top: 0;
+   }
+   .img-banner {
+      margin-top: 20px;
+   }
+   /* .text-banner{
+      padding: 0;
+   } */
+   
+   /* .banner-awal{
+      padding: 0;
+   } */
 }
-
+.jelajahi:hover{
+   border-radius: 30px;
+   transition: ease-in-out 0.5s;
+   background-color: #0284c7;
+}
 @media only screen and (max-width: 546px) {
    .img-banner > img {
       width: 40vh;

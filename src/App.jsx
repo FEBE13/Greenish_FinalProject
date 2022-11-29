@@ -5,6 +5,7 @@ import HomePage from "./Pages/Homepages";
 import Event from "./Pages/Event";
 import News from "./Pages/News";
 import Aboutus from "./Pages/Aboutus";
+import DetailEvent from "./Pages/DetailEvent"
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/event" element={<Event />} />
-        {/* <Route exact path="/detail/:id" element={<DetailEvent />} /> */}
+        <Route exact path="/detail/:id" element={<DetailEvent/>} />
         {/* <Route exact path="/addevent" element={<AddEvent />} /> */}
         {/* <Route path="/detailartikel/:id" element={<DetailArticle />} /> */}
         <Route path="/aboutus" element={<Aboutus />} />
