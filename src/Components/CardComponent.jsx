@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../Redux/Action/EventAction";
+import { getEvent } from "../Redux/Action/EventAction";
 import { useNavigate } from "react-router-dom";
 
 
@@ -11,14 +11,9 @@ function CardComponent() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.Event);
   const item = data.events;
-  // item.map((item)=>{
-  //   const date = new Date (item.date)
-  //   date.getYear()
-  //   console.log(date)
-  // })
-
+  
   useEffect(() => {
-    dispatch(getUser());
+    dispatch(getEvent());
   }, []);
 
   return (

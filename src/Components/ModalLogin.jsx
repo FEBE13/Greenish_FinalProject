@@ -11,11 +11,11 @@ function ModalLogin( { show, onClose }) {
     }
     return (
     
-    <Modal show={show} fullscreen='sm-down' onHide={onClose}>
+    <Modal show={show}  onHide={onClose}>
         <Modal.Header style={{border:'0 none'}}>
           <div style={{width:'400px'}}>
-          <h3 style={{fontWeight:'700'}}>Bumi yang rapuh ini perlu kita !</h3>
-          <p style={{fontSize:'20px'}}>Masuk untuk melihat informasi dan kegiatan terkini </p>
+          <h3 style={{fontWeight:'700',textAlign:'left'}}>Bumi yang rapuh ini perlu kita !</h3>
+          <p style={{fontSize:'20px',textAlign:'left'}}>Masuk untuk melihat informasi dan kegiatan terkini </p>
           </div>              
         </Modal.Header>
         <Modal.Body>
