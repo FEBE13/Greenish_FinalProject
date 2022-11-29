@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom'
 import logo from "../Assets/logo.png"
+import { getEvent } from '../Redux/Action/EventAction';
+import { getUser } from '../Redux/Action/UserAction';
 import ModalLogin from './ModalLogin';
 import ModalSignUp from './ModalSignUp';
 
 function Navi() {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.User);
+  // console.log(data);
+  
+  useEffect(() => {
+    dispatch(getUser());  
+  }, []);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

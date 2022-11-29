@@ -1,4 +1,4 @@
-import { FETCH_START,SUCCESS_GET_USER} from "../Action/EventAction";
+import { FETCH_START,SUCCESS_GET_DATA} from "../Action/EventAction";
 
 const init = {
     events : [],
@@ -12,7 +12,7 @@ function EventReducer(state = init,action) {
                 ...state,
                 loading : true
             }
-        case SUCCESS_GET_USER:
+        case SUCCESS_GET_DATA:
             return{
                 ...state,
                 events : action.payload,
