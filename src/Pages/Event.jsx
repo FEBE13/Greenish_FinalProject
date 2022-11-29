@@ -1,6 +1,7 @@
 import React from 'react'
 import BannerEvent from '../Components/BannerEvent'
 import CardComponent from '../Components/CardComponent'
+import Footer from '../Components/Footer'
 import Navi from '../Components/Navi'
 
 function Event() {
@@ -9,6 +10,7 @@ function Event() {
         <Navi/>
         <BannerEvent/>
         <CardComponent/>
+        <Footer />
     </div>
   )
 }
