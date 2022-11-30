@@ -47,12 +47,6 @@ function Navi() {
   },[localStorage.getItem("token")])
 
 
-    const gbr = <img
-    src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
-    width="40"
-    height="40"
-    className="rounded-circle"
-  />
   return (
     <Navbar style={{height:'fit-content',backgroundColor:'#EFF7F2',padding:'20px 0'}} expand="lg">
       <Container className='contain' >
@@ -72,7 +66,12 @@ function Navi() {
             <Nav.Link><Link to={"/news"} className='link'>News</Link></Nav.Link>
           </Nav>
           <Container className='wrap-right' style={{width:'fit-content',display:'flex',alignItems:'center'}}>
-          <NavDropdown  title={gbr} id={alrlogin}>
+          <NavDropdown  title= {<img
+    src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
+    width="40"
+    height="40"
+    className="rounded-circle"
+  />} id={alrlogin}>
               <NavDropdown.Item><Link className='link1'>Dashboard</Link></NavDropdown.Item>
               <NavDropdown.Item>
                 <Link className='link1'>Edit Profile</Link>

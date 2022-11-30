@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Navi from "../Components/Navi";
 import { getEvent } from "../Redux/Action/EventAction";
+import { postParticipant } from "../Redux/Action/UserAction";
 
 function DetailEvent() {
   const { pathname } = useLocation();
@@ -23,12 +24,34 @@ function DetailEvent() {
   const data = useSelector((state) => state.Event);
   const user = useSelector((state) => state.User);
   const events = data.events;
+  const users = user.users
+
+  const [name,setName] = useState("")
+  const [address,setAdress] = useState("")
+  const [email,setEmail] = useState("")
+  const [city,setCity] = useState("")
+  const [phone,setPhone] = useState("")
+  const [zip,setZip] = useState("")
+
+  const posting = {
+    id_user : userid,
+    id_event : id,
+    address : address,
+    phone,
+    city,
+    zip
+  }
 
 
 
-  //  useEffect(() => {
-  //   console.log(user);
-  // }, [user]);
+   useEffect(() => {
+    users.map((item)=>{
+      if (item._id === userid) {
+        setName(item.name)
+        setEmail(item.email)
+      }
+    })
+  }, [user]);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       const token = jwtDecode(localStorage.getItem("token"))
@@ -50,7 +73,13 @@ function DetailEvent() {
    useEffect(() => {
       dispatch(getEvent());
     }, []);
-    
+
+    function eventregis(e) {
+      e.preventDefault()
+      dispatch(postParticipant(posting))
+      alert("behasil daftar event ! ")
+      window.location.reload()
+    }
     return (
       <div style={{ backgroundColor: "#f5f6fa" }}>
          <Navi />
@@ -304,7 +333,7 @@ function DetailEvent() {
         Ayo daftarkan dirimu sekarang
       </h2>
       <Container style={{ padding: "20px" }}>
-        <Form style={{ position: "relative" }}>
+        <Form onSubmit={eventregis} style={{ position: "relative" }}>
           <div
             id={hide}
             style={{
@@ -342,21 +371,11 @@ function DetailEvent() {
           </div>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label>First Name</Form.Label>
+              <Form.Label>Fullname</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Your first name"
-                //  value={fname}
-                disabled
-              />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridPassword">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Your last name"
-                //  value={lname}
+                 value={name}
                 disabled
               />
             </Form.Group>
@@ -368,8 +387,9 @@ function DetailEvent() {
                            >
                               <Form.Label>Address</Form.Label>
                               <Form.Control
+                                 value={address}
                                  placeholder="Jl. Mangga no 4"
-                                 // onChange={(e) => setAdress(e.target.value)}
+                                 onChange={(e) => setAdress(e.target.value)}
                               />
                            </Form.Group>
 
@@ -381,7 +401,7 @@ function DetailEvent() {
                               <Form.Control
                                  type="email"
                                  placeholder="Youremai@gmail.com"
-                                 // value={email}
+                                 value={email}
                                  disabled
                               />
                            </Form.Group>
@@ -394,7 +414,7 @@ function DetailEvent() {
                               <Form.Control
                                  type="number"
                                  placeholder="085..."
-                                 // value={phone} onChange={(e)=>setPhone(e.target.value)}
+                                 value={phone} onChange={(e)=>setPhone(e.target.value)}
                               />
                            </Form.Group>
 
@@ -402,16 +422,16 @@ function DetailEvent() {
                               <Form.Group as={Col} controlId="formGridCity">
                                  <Form.Label>City</Form.Label>
                                  <Form.Control
-                                 // value={city}
-                                 // onChange={(e) => setCity(e.target.value)}
+                                 value={city}
+                                 onChange={(e) => setCity(e.target.value)}
                                  />
                               </Form.Group>
 
                               <Form.Group as={Col} controlId="formGridZip">
                                  <Form.Label>Zip</Form.Label>
                                  <Form.Control
-                                 // value={zip}
-                                 // onChange={(e) => setZip(e.target.value)}
+                                 value={zip}
+                                 onChange={(e) => setZip(e.target.value)}
                                  />
                               </Form.Group>
                            </Row>

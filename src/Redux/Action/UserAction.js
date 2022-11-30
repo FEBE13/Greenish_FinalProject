@@ -30,3 +30,10 @@ export const postUser = (data) =>{
         axios.post("https://begreenishfinalproject-production.up.railway.app/users",data)
     }
 } 
+
+export const postParticipant = (data) =>{
+    return  () =>{
+         axios.post("https://begreenishfinalproject-production.up.railway.app/participants",data)
+         axios.put( `https://begreenishfinalproject-production.up.railway.app/events/person/${data.id_event}`,data)
+    }
+} 
