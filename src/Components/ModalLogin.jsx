@@ -1,13 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAuth } from '../Redux/Action/AuthAction'
 
 
 function ModalLogin( { show, onClose }) {
+  const dispacth = useDispatch()
   const [email,setEmail] = useState("")
   const [pass,setPass] = useState("")
+
+
+  // const auther = useSelector((state) => state.Auth);
+  // console.log(auther);
+  
+  // useEffect(() => {
+  //   dispacth(getAuth());
+  // }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("failed") === "true") {
+  //     alert("salah pass dan email")
+  //   }else if(localStorage.getItem("failed") === "false"){
+  //     alert("berhasil")
+  //   }
+  // }, []);
+
+  const data = {
+    email:email,
+    pass:pass
+  }
     function handleSubmit(e) {
       e.preventDefault()
-      alert(email+""+pass)
+      dispacth(getAuth(data))
+
+
     }
     return (
     

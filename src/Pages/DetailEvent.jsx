@@ -39,6 +39,15 @@ function DetailEvent() {
       <Navi />
       {events.map((item)=>{
           if (item._id === id) {
+            const date = new Date(item.date).getDate();
+            const year = new Date(item.date).getFullYear();
+            const month = new Date(item.date).toLocaleString(
+               "id",
+               {
+                  month: "long",
+               }
+            );
+            const datee = `${date} ${month} ${year}`
             return (
               <div>
                 <div
@@ -124,7 +133,7 @@ function DetailEvent() {
                 fontWeight: "500",
               }}
             >
-              hingga 20 Agustus 2022
+              hingga {datee}
             </p>
           </div>
         </div>
@@ -138,7 +147,7 @@ function DetailEvent() {
             marginBottom: "30px",
           }}
         >
-          Gerakan Bersih Pantai di Pantai Pede, Labuan Bajo
+          {item.name}
         </h2>
         <h2
           style={{
@@ -226,7 +235,7 @@ function DetailEvent() {
             class="uil uil-calendar-alt"
           >
             {" "}
-            : 20 Agustus 2022
+            : {datee}
           </i>
           {/* <p style={{height:'fit-content',marginTop:'15px',marginLeft:'10px',fontSize:'20px',fontWeight:'400'}}>Event dilaksanakan di zoom</p> */}
         </div>

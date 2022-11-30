@@ -27,6 +27,15 @@ function CardComponent() {
       }}
     >
       {item.map((item,index) => {
+        const date = new Date(item.date).getDate();
+        const year = new Date(item.date).getFullYear();
+        const month = new Date(item.date).toLocaleString(
+           "id",
+           {
+              month: "long",
+           }
+        );
+        const datee = `${date} ${month} ${year}`
         return (
           <Card
             onClick={()=>{nav(`/event/${item._id}`)}}
@@ -45,14 +54,14 @@ function CardComponent() {
               variant="top"
               src={item.poster}
             />
-            <Card.Body style={{ padding: "15px", lineHeight: "20px" }}>
-              <p style={{ fontWeight: "600", fontSize: "18px" }}>
-                {item.name}
-              </p>
-              <p style={{ fontWeight: "300", fontSize: "15px" }}>
+            <Card.Body style={{ padding: "10px" }}>
+              <p style={{ fontWeight: "600", fontSize: "18px"}}>
+              {item.name ? item.name.slice(0,100) : ''}
+              </p>  
+              <p style={{ fontWeight: "400", fontSize: "15px" }}>
                 {item.place}
               </p>
-              <p style={{ fontWeight: "300", fontSize: "15px" }}>21 Des 2022</p>
+              <p style={{ fontWeight: "300", fontSize: "15px" }}>{datee}</p>
             </Card.Body>
           </Card>
         );

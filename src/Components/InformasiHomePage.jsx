@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getArticles } from "../Redux/Action/ArticlesAction";
@@ -8,6 +8,7 @@ function InformasiHomePage() {
    const dispatch = useDispatch();
    const data = useSelector((state) => state.Articles);
    const item = data.articles;
+   const [nam,setName] = useState("")
    // console.log(item);
 
    useEffect(() => {
@@ -18,6 +19,7 @@ function InformasiHomePage() {
          <h1>Informasi terbaru kami</h1>
          <div className="row row-cols-1 row-cols-lg-4 g-4">
             {item.map((item, index) => {
+               // const ctn = (item.content).toString()  
                return (
                   <div className="col" onClick={() => {nav(`/articles/${item._id}`)}} key={item._id}>
                      <div className="card h-100">
@@ -31,7 +33,7 @@ function InformasiHomePage() {
                               {item.title}
                            </h5>
                            <p className="card-text">
-                              {item.content.slice(0, 230)}..
+                           {item.content ? item.content.slice(0,100) : ''}
                            </p>
                         </div>
                      </div>

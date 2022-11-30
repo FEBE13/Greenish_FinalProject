@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Form, FormControl, InputGroup } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { SearchEvent } from "../Redux/Action/EventAction";
 
 function BannerEvent() {
+  const [value,setValue] = useState("")
+  const dispatch = useDispatch()
+
+  function handlerSearch(e) {
+    e.preventDefault()
+    dispatch(SearchEvent(value))
+    setValue("")
+
+  }
   return (
     <div>
       <div
@@ -41,9 +52,11 @@ function BannerEvent() {
           >
             Ayo gabung event yang cocok denganmu !
           </h2>
-          <Form>
+          <Form onSubmit={handlerSearch}>
             <InputGroup>
               <FormControl
+                value={value}
+                onChange={(e)=>{setValue(e.target.value)}}
                 placeholder="Bakau"
                 size="lg"
                 style={{
