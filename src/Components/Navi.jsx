@@ -20,7 +20,11 @@ function Navi() {
   // }, []);
   const data = useSelector((state) => state.User);
   // console.log(data);
-  
+  function handleSignout() {
+    localStorage.removeItem("token")
+    window.location.reload()
+    // localStorage.removeItem("token")
+  }
   useEffect(() => {
     dispatch(getUser());  
   }, []);
@@ -74,7 +78,7 @@ function Navi() {
                 <Link className='link1'>Edit Profile</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className='link1'>Sign Out</Link>
+                <Link className='link1' onClick={handleSignout}>Sign Out</Link>
               </NavDropdown.Item>
             </NavDropdown>
              <Button className='btnLogin' id={login} onClick={handleShow} style={{fontWeight:'600',width:'100px',padding:'8px',borderRadius:'8px',backgroundColor:'#38A755',border:'none', boxShadow:'0px 5px 20px 0px rgba(0, 0, 0, 0.25)'}}>
