@@ -8,7 +8,7 @@ import { FAIL_GET_AUTH, SUCCESS_GET_AUTH } from "../Action/AuthAction"
 const init = {
     token : "" ,
     isLogin : false,
-    failed : false
+    err : null
 
 }
 
@@ -19,18 +19,17 @@ function AuthReducer(state = init, action) {
     const dataToken = action.payload.token
     localStorage.setItem("token",dataToken)
     localStorage.setItem("failed",false)
-    // setAlrlogin("login_show")
-    // setLogin("login_hide")
+
     return{
         ...state,
         token : dataToken,
-        isLogin : true
+        isLogin : true,
+        err : false,
     }
     case FAIL_GET_AUTH :
-        localStorage.setItem("failed",true)
         return{
             ...state,
-            failed : true
+            err: true
         }
     default:
         return init
