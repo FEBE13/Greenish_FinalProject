@@ -1,4 +1,16 @@
+import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getArticles } from "../Redux/Action/ArticlesAction";
+import { useNavigate } from "react-router-dom";
 function ArtikelNewsPage() {
+   const nav = useNavigate();
+   const dispatch = useDispatch();
+   const dataArticles = useSelector((state) => state.Articles);
+   const item = dataArticles.articles;
+   useEffect(() => {
+      dispatch(getArticles());
+   }, []);
    return (
       <div className="container">
          <div className="row">
@@ -44,7 +56,35 @@ function ArtikelNewsPage() {
                      </div>
                   </div>
                </div>
-               <div className="card mb-3" style={{ maxWidth: "750px" }}>
+               {item.slice(0,3).map((item, index) => {
+                  return(
+                     <div className="card mb-3" style={{ maxWidth: "750px" }}>
+                  <div className="row g-0">
+                     <div className="col-md-4">
+                        <img
+                           src="https://res.cloudinary.com/ddhkwq4zk/image/upload/v1669561508/image_6_jknjxd.png"
+                           className="img-fluid rounded-start"
+                           alt="..."
+                        />
+                     </div>
+
+                     <div className="col-md-8">
+                        <div className="card-body">
+                           <h5 className="card-title">
+                              Yang hilang dari pidato kenegaraan jokowi
+                           </h5>
+                           <p className="card-text">
+                              This is a wider card with supporting text below as
+                              a natural lead-in to additional content. This
+                              content is a little bit longer.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+                  )
+               })}
+               {/* <div className="card mb-3" style={{ maxWidth: "750px" }}>
                   <div className="row g-0">
                      <div className="col-md-4">
                         <img
@@ -92,7 +132,7 @@ function ArtikelNewsPage() {
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> */}
             </div>
          </div>
       </div>

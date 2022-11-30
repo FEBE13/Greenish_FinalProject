@@ -1,57 +1,51 @@
 import React from "react";
-
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getEvent } from "../Redux/Action/EventAction";
+import { useNavigate } from "react-router-dom";
 function EventHomePage() {
+   const nav = useNavigate();
+   const dispatch = useDispatch();
+   const data = useSelector((state) => state.Event);
+   const item = data.events;
+   console.log("ini dari event home page", item);
+
+   useEffect(() => {
+      dispatch(getEvent());
+   }, []);
    return (
       <div className="container event-homepage">
+         <h1>Event Terbaru</h1>
          <div className="row">
-            <h1>Event Terbaru</h1>
-            <div className="col-lg-4  col-xs-12 card text-white card-event-homepage">
-               <img
-                  className="img-event-homepage"
-                  src="https://res.cloudinary.com/dk55ik2ah/image/upload/v1669165351/Image_ve7hce.png"
-                  alt=""
-               />
-               <div className="text-event-homepage card-img-overlay">
-                  <h4>Bebas Polusi Plastik</h4>
-                  <p>
-                  Dorong pemerintah dan korporasi untuk menekan penggunaan
-                     plastik sekali pakai dan berhenti mencemari lingkungan
-                  </p>
-                  <button className="btn-event-homepage">See more</button>
-               </div>
-            </div>
-            <div className="col-lg-4 col-xs-12 card text-white card-event-homepage">
-               <img
-                  className="img-event-homepage"
-                  src="https://res.cloudinary.com/dk55ik2ah/image/upload/v1669165351/Image_ve7hce.png"
-                  alt=""
-               />
-               <div className="text-event-homepage card-img-overlay">
-                  <h4>Bebas Polusi Plastik</h4>
-                  <p>
-                  Dorong pemerintah dan korporasi untuk menekan penggunaan
-                     plastik sekali pakai dan berhenti mencemari lingkungan
-                  </p>
-                  <button className="btn-event-homepage">See more</button>
-               </div>
-            </div>
-            <div className="col-lg-4 col-xs-12 card text-white card-event-homepage">
-               <img
-                  className="img-event-homepage"
-                  src="https://res.cloudinary.com/dk55ik2ah/image/upload/v1669165351/Image_ve7hce.png"
-                  alt=""
-               />
-               <div className="text-event-homepage card-img-overlay">
-                  <h4>Bebas Polusi Plastik</h4>
-                  <p>
-                     Dorong pemerintah dan korporasi untuk menekan penggunaan
-                     plastik sekali pakai dan berhenti mencemari lingkungan
-                  </p>
-                  <button className="btn-event-homepage">See more</button>
-               </div>
-            </div>
+            {item.slice(0, 3).map((item, index) => {
+               return (
+                  <div
+                     onClick={() => {
+                        nav(`/event/${item._id}`);
+                     }}
+                     key={item._id}
+                     className="col-lg-4  col-xs-12 card text-white card-event-homepage"
+                  >
+                     <img
+                        className="img-event-homepage"
+                        src={item.poster}
+                        alt=""
+                     />
+                     <div className="text-event-homepage card-img-overlay">
+                        <h4>{item.name}</h4>
+                        <p>{item.desc}</p>
+                        <button className="btn-event-homepage">See more</button>
+                     </div>
+                  </div>
+               );
+            })}
          </div>
-         <button className="btn-informasiall-homepage">Lihat Semua</button>
+         <button
+            onClick={() => nav("/event")}
+            className="btn-informasiall-homepage"
+         >
+            Lihat Semua
+         </button>
       </div>
    );
 }
