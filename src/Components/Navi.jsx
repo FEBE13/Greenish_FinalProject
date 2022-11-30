@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
-import logo from "../Assets/logo.png"
+import logo from "./logo.png"
 import { getAuth } from '../Redux/Action/AuthAction';
 import { getEvent } from '../Redux/Action/EventAction';
 import { getUser } from '../Redux/Action/UserAction';
