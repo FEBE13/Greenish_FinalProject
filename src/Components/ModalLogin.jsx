@@ -1,21 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { getAuth } from '../Redux/Action/AuthAction'
 
 
 function ModalLogin( { show, onClose }) {
   const dispacth = useDispatch()
+  const nav = useNavigate
   const [email,setEmail] = useState("")
   const [pass,setPass] = useState("")
 
 
-  // const auther = useSelector((state) => state.Auth);
+  // 
   // console.log(auther);
-  
-  // useEffect(() => {
-  //   dispacth(getAuth());
-  // }, []);
+    const {err} = useSelector((state) => state.Auth);
+    function cek() {
+      auther.err ? true : false
+    }
+
+  useEffect(() => {
+    if (err) {
+      alert("pastikan password dan email sudah benar")
+    }else if (err == false){
+      setEmail("")
+      setPass("")
+      window. location. reload()
+    }
+  }, [err]);
   // useEffect(() => {
   //   if (localStorage.getItem("failed") === "true") {
   //     alert("salah pass dan email")
@@ -31,8 +43,6 @@ function ModalLogin( { show, onClose }) {
     function handleSubmit(e) {
       e.preventDefault()
       dispacth(getAuth(data))
-
-
     }
     return (
     

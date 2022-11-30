@@ -32,10 +32,15 @@ function Navi() {
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
 
-
   const {login,setLogin} = useContext(UserContextFill)
   const {alrlogin,setAlrlogin} = useContext(UserContextFill)
   
+  useEffect(()=>{
+    if (localStorage.getItem("token")) {
+      setLogin("login_hide")
+      setAlrlogin("login_show")
+    }
+  },[localStorage.getItem("token")])
 
 
     const gbr = <img
@@ -63,7 +68,7 @@ function Navi() {
             <Nav.Link><Link to={"/news"} className='link'>News</Link></Nav.Link>
           </Nav>
           <Container className='wrap-right' style={{width:'fit-content',display:'flex',alignItems:'center'}}>
-          {/* <NavDropdown id = 'alrlogin' title={gbr} id="navbarScrollingDropdown">
+          <NavDropdown  title={gbr} id={alrlogin}>
               <NavDropdown.Item><Link className='link1'>Dashboard</Link></NavDropdown.Item>
               <NavDropdown.Item>
                 <Link className='link1'>Edit Profile</Link>
@@ -71,7 +76,7 @@ function Navi() {
               <NavDropdown.Item>
                 <Link className='link1'>Sign Out</Link>
               </NavDropdown.Item>
-            </NavDropdown> */}
+            </NavDropdown>
              <Button className='btnLogin' id={login} onClick={handleShow} style={{fontWeight:'600',width:'100px',padding:'8px',borderRadius:'8px',backgroundColor:'#38A755',border:'none', boxShadow:'0px 5px 20px 0px rgba(0, 0, 0, 0.25)'}}>
                 Register
             </Button>
