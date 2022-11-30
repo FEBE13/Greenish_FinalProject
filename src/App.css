@@ -27,6 +27,12 @@
       margin-top: 18px;
    }
 }
+#login_show{
+   display: block;
+}
+#login_hide{
+   display: none;
+}
 
 /* style component banner homepage */
 .jelajahi {

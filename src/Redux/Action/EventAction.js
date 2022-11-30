@@ -17,10 +17,16 @@ function DoneFetchData(data) {
 }
 
 export const getEvent = () =>{
-
     return async (dispatch) =>{
         dispatch(StartFetching())
         const res = await axios.get("https://begreenishfinalproject-production.up.railway.app/events")
+        dispatch(DoneFetchData(res.data))
+    }
+}
+export const SearchEvent = (dataSearch) =>{
+    return async (dispatch) => {
+        dispatch(StartFetching())
+        const res = await axios.get(`https://begreenishfinalproject-production.up.railway.app/search/event?name=${dataSearch}`)
         dispatch(DoneFetchData(res.data))
     }
 }
