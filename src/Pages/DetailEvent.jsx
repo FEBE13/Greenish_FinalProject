@@ -18,20 +18,26 @@ function DetailEvent() {
   const { id } = useParams();
   const nav = useNavigate();
   const dispatch = useDispatch();
-  const [hide,setHide] = useState("")
-  const [userId,setUserid] = useState("")
+  const[hide,setHide] = useState("")
+  const[userid,setUserid] = useState("")
   const data = useSelector((state) => state.Event);
   const user = useSelector((state) => state.User);
   const events = data.events;
-  const [name,setName] = useState("")
-  const [address,setAddress] = useState("")
-  const [email,setEmail] = useState("")
-  const [phone,setPhone] = useState("")
-  const [city,setCity] = useState("")
-  const [zip,setZip] = useState("")
-  
 
 
+
+  //  useEffect(() => {
+  //   console.log(user);
+  // }, [user]);
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      const token = jwtDecode(localStorage.getItem("token"))
+      setUserid(token.id)
+      setHide("login_hide")
+    }else{
+      setHide("login_show")
+    }
+  }, []);
   // events.map((item)=>{
     // })
     useEffect(() => {
@@ -58,7 +64,7 @@ function DetailEvent() {
             );
             const datee = `${date} ${month} ${year}`
             return (
-              <div>
+              <div key={item._id}>
                 <div
         style={{
           height: "400px",
@@ -226,7 +232,7 @@ function DetailEvent() {
         >
           <i
             style={{ fontSize: "22px", fontWeight: "300", fontStyle: "normal" }}
-            class="uil uil-location-point"
+            className="uil uil-location-point"
           >
             {" "}
             : {item.place}
@@ -249,7 +255,7 @@ function DetailEvent() {
         >
           <i
             style={{ fontSize: "22px", fontWeight: "300", fontStyle: "normal" }}
-            class="uil uil-calendar-alt"
+            className="uil uil-calendar-alt"
           >
             {" "}
             : {datee}
@@ -262,7 +268,7 @@ function DetailEvent() {
         >
           <i
             style={{ fontSize: "22px", fontWeight: "300", fontStyle: "normal" }}
-            class="uil uil-building"
+            className="uil uil-building"
           >
             {" "}
             : {item.organizer}
@@ -300,7 +306,7 @@ function DetailEvent() {
       <Container style={{ padding: "20px" }}>
         <Form style={{ position: "relative" }}>
           <div
-            //  className={hide}
+            id={hide}
             style={{
               blur: "50px",
               backgroundColor: "black",
