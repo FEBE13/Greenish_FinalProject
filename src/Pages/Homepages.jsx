@@ -13,7 +13,7 @@ function Homepages() {
         <Navi/>
         <BannerHomePage />
         <AboutUsHomepage />
-        <EventHomePage />
+        {/* <EventHomePage /> */}
         <BannerJoinHomePage />
         <InformasiHomePage />
         <Footer />
