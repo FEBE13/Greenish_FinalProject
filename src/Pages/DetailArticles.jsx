@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { getArticles } from "../Redux/Action/ArticlesAction";
+import { getArticles, likeUpdate } from "../Redux/Action/ArticlesAction";
 import Navi from "../Components/Navi";
 import Footer from "../Components/Footer";
+import jwtDecode from "jwt-decode";
 
 function DetailArticles() {
+   // const dispatch = useDispatch()
    const { pathname } = useLocation();
    const { id } = useParams();
    const nav = useNavigate();
    const dispatch = useDispatch();
+   const [userid,setUserid] = useState()
    const data = useSelector((state) => state.Articles);
    const articles = data.articles;
    console.log(articles);
@@ -25,6 +28,21 @@ function DetailArticles() {
    useEffect(() => {
       dispatch(getArticles());
    }, []);
+   useEffect(() => {
+      if (localStorage.getItem("token")) {
+        const token = jwtDecode(localStorage.getItem("token"))
+        setUserid(token.id)
+      }
+    }, []);
+    const dataLike ={
+      id_user : userid,
+      id_article : id
+    }
+
+    console.log(dataLike)
+    function likeArticle() {
+      dispatch(likeUpdate(id,dataLike))
+    }
    return (
       <div>
          <Navi />
@@ -59,16 +77,7 @@ function DetailArticles() {
                            <p>{dates}</p>
                         </div>
                      </div>
-                     {/* <button
-                        style={{
-                           padding: "5px 8px",
-                           borderRadius: "10px",
-                           backgroundColor: "rgb(56, 167, 85)",
-                           margin: "10px 0px",
-                        }}
-                     >
-                        Like
-                     </button> */}
+                     <button onClick={likeArticle}  style={{width:'100px',borderRadius:'40px',padding:'0',backgroundColor:'white',margin:'10px'}}><i style={{fontSize:'30px',color:'red'}} class="uil uil-heart">{item.likes}</i></button>
                      <center>
                         <img
                            className="image-article card-img-top"
