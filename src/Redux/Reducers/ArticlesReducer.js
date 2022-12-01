@@ -1,4 +1,4 @@
-import { FETCH_START,SUCCESS_GET_DATA} from "../Action/ArticlesAction";
+import { FETCH_START,SUCCESS_GET_DATA_ARTICLE} from "../Action/ArticlesAction";
 
 const init = {
     articles : [],
@@ -12,7 +12,7 @@ function ArticlesReducer(state = init,action) {
                 ...state,
                 loading : true
             }
-        case SUCCESS_GET_DATA:
+        case SUCCESS_GET_DATA_ARTICLE:
             return{
                 ...state,
                 articles : action.payload,

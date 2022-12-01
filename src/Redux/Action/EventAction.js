@@ -30,3 +30,13 @@ export const SearchEvent = (dataSearch) =>{
         dispatch(DoneFetchData(res.data))
     }
 }
+export const postEvent = (data) =>{
+    return async () =>{
+        axios.post("https://begreenishfinalproject-production.up.railway.app/events",data)
+    }
+}
+export const deleteEvent = (id) => {
+    return () =>{
+        axios.delete(`https://begreenishfinalproject-production.up.railway.app/events/${id}`)
+    }
+}
