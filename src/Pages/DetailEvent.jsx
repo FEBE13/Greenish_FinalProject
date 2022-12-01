@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import jwtDecode from "jwt-decode";
 import {
    Button,
@@ -13,6 +13,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Navi from "../Components/Navi";
 import { getEvent } from "../Redux/Action/EventAction";
 import { postParticipant } from "../Redux/Action/UserAction";
+import { UserContextFill } from "../Components/UserContext";
 
 function DetailEvent() {
   const { pathname } = useLocation();
