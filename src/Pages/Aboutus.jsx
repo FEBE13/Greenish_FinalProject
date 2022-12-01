@@ -5,7 +5,7 @@ import Footer from '../Components/Footer'
 
 function Aboutus() {
   return (
-    <div>
+    <div style={{backgroundColor:'#f5f6fa'}}>
         <Navi/>
         <ContentAboutus />
         <Footer />

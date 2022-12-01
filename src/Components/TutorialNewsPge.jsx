@@ -7,6 +7,7 @@ function TutorialNewsPage() {
             <div className="col">
                <div className="card h-100">
                   <iframe
+                  className="videoyt"
                      src="https://www.youtube.com/embed/-UDCt8zRYhQ"
                      title="YouTube video player"
                      frameBorder="0"
