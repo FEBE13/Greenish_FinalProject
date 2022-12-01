@@ -37,3 +37,8 @@ export const postParticipant = (data) =>{
          axios.put( `https://begreenishfinalproject-production.up.railway.app/events/person/${data.id_event}`,data)
     }
 } 
+export const deleteUser = (id) => {
+    return () =>{
+        axios.delete(`https://begreenishfinalproject-production.up.railway.app/users/${id}`)
+    }
+}

@@ -11,6 +11,9 @@ import AddArticles from "./Pages/AddArticles";
 import DetailArticles from "./Pages/DetailArticles";
 import DashboardAdmin from "./Pages/DashboardAdmin";
 import DashboardUser from "./Pages/DashboardUser";
+import PostAdmin from "./Pages/PostAdmin";
+import PostArticle from "./Pages/PostArticle";
+import PostEvent from "./Pages/PostEvent";
 
 function App() {
    return (
@@ -28,7 +31,9 @@ function App() {
             <Route path="/news" element={<News />} />
                <Route path="/dashboardAdmin" element={<DashboardAdmin />} />
                <Route path="/dashboardUser" element={<DashboardUser />} />
-            {/* <Route path="/login" element={<Login />} /> */}
+            <Route path="/pstam" element={<PostAdmin />} />
+            <Route path="/pstar" element={<PostArticle />} />
+            <Route path="/pstev" element={<PostEvent />} />
             {/* <Route path="/register" element={<Register />} /> */}
             {/* <Route path="*" element={<NotFound />} /> */}
             
