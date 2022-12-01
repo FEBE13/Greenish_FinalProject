@@ -35,3 +35,11 @@ export const deleteArticle = (id) => {
         axios.delete(`https://begreenishfinalproject-production.up.railway.app/articles/${id}`)
     }
 }
+export const likeUpdate = (idArticle,data) => {
+    return  async() =>{
+        await axios.post(`https://begreenishfinalproject-production.up.railway.app/like`,data)
+        await axios.put(`https://begreenishfinalproject-production.up.railway.app/articles/likeby/${idArticle}`)
+        // const res = await axios.get("https://begreenishfinalproject-production.up.railway.app/articles")
+        // DoneFetchData(res.data)
+    }
+}

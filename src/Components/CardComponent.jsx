@@ -48,7 +48,7 @@ function CardComponent() {
                   }}
                >
                   <Card.Img
-                     style={{ objectFit: "cover", height: "200px" }}
+                     style={{ objectFit: "cover", height: "200px",width:'100%'}}
                      variant="top"
                      src={item.poster}
                   />
