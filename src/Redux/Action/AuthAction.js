@@ -30,6 +30,7 @@ export const getAuth = (data) => {
 
             dispatch(DoneFetchDataAuth(res.data))
         }else if(res.data.Message === "data tidak ketemu"){
+            alert("pastikan password dan email sudah benar")
             dispatch(FailFetchData())
             // alert("gagal login")
             // console.log("fail");

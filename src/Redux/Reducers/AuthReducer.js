@@ -27,6 +27,7 @@ function AuthReducer(state = init, action) {
         err : false,
     }
     case FAIL_GET_AUTH :
+        localStorage.setItem("failed",true)
         return{
             ...state,
             err: true
