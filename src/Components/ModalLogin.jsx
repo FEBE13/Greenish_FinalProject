@@ -20,14 +20,13 @@ function ModalLogin( { show, onClose }) {
     }
 
   useEffect(() => {
-    if (err) {
-      alert("pastikan password dan email sudah benar")
-    }else if (err == false){
+    if (localStorage.getItem("failed") === "false") {
       setEmail("")
       setPass("")
+      localStorage.removeItem("failed")
       window. location. reload()
     }
-  }, [err]);
+  }, [localStorage.getItem("failed")]);
   // useEffect(() => {
   //   if (localStorage.getItem("failed") === "true") {
   //     alert("salah pass dan email")
