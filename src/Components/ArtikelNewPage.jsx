@@ -16,126 +16,66 @@ function ArtikelNewsPage() {
          <div className="row">
             <div className="col-lg-6 col-xs-12 artikel-news-page1">
                <div>
-                  <h1>Dampak negatif dari pembakaran hutan</h1>
-                  <img className="img-artikel-news-page1"
-                     src="https://res.cloudinary.com/ddhkwq4zk/image/upload/v1669308067/Rectangle_1321_d2s2cc.png"
+                  <h1>Raja Ampat: Surga Petualangan Dunia di Ujung Papua</h1>
+                  <img
+                     className="img-artikel-news-page1"
+                     src="https://res.cloudinary.com/dk55ik2ah/image/upload/c_scale,w_260/v1668866828/Raja_Ampat__Mutiara_Indah_di_Timur_Indonesia_wbc3fs.jpg"
                      alt=""
                   />
                </div>
                <div className="artikel-news-page-teks">
                   <p>
-                     Dampak negatif dari pembakaran hutan yaitu bisa menyebabkan
-                     polusi udara, gangguan penerbangan, gangguan pernapasan,
-                     dan gangguan alam lainnya
+                     Raja Ampat adalah sebuah kabupaten dan merupakan bagian
+                     dari Propinsi Papua Barat. Untuk mencapai Kepulauan ini,
+                     kita harus menginjakkan kaki di kota Sorong terlebih
+                     dahulu. Biasanya para wisatawan banyak menggunakan
+                     penerbangan untuk sampai ke kota ini. Setelah sampai kota
+                     Sorong
                   </p>
-                  <button className="btn-readmore-news">Read more</button>
+                  <button onClick={() => {
+                     nav(`/articles/6384d5a83a5f1ba5f9185dac`)
+                  }} className="btn-readmore-news">Read more</button>
                </div>
             </div>
             <div className="col-lg-6 col-xs-12 artikel-news-page-kanan">
-               <div className="card mb-3 card-artikel-newspage-kanan" style={{ maxWidth: "750px" }}>
-                  <div className="row g-0 div-row">
-                     <div className="col-md-4">
-                        <img
-                           src="https://res.cloudinary.com/ddhkwq4zk/image/upload/v1669561508/image_6_jknjxd.png"
-                           className="img-fluid rounded-start img-artikel-newspage-kanan"
-                           alt="..."
-                        />
-                     </div>
+               <div>
+                  {item.slice(1, 3).map((item, index) => {
+                     return (
+                        <div
+                           onClick={() => {
+                              nav(`/articles/${item._id}`);
+                           }}
+                           key={item._id}
+                           className="card mb-3"
+                           style={{ maxWidth: "750px" }}
+                        >
+                           <div className="row g-0">
+                              <div className="col-md-4">
+                                 <img
+                                    src={item.poster}
+                                    className="img-fluid rounded-start"
+                                    alt="..."
+                                 />
+                              </div>
 
-                     <div className="col-md-8">
-                        <div className="card-body">
-                           <h5 className="card-title">
-                              Yang hilang dari pidato kenegaraan jokowi
-                           </h5>
-                           <p className="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                           </p>
+                              <div className="col-md-8">
+                                 <div className="card-body">
+                                    <h5 className="card-title">{item.title}</h5>
+                                    <p className="card-text">
+                                       {item.content
+                                          ? item.content.slice(0, 100)
+                                          : ""}
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                     </div>
-                  </div>
+                     );
+                  })}
                </div>
-               {item.slice(0,3).map((item, index) => {
-                  return(
-                     <div className="card mb-3" style={{ maxWidth: "750px" }}>
-                  <div className="row g-0">
-                     <div className="col-md-4">
-                        <img
-                           src="https://res.cloudinary.com/ddhkwq4zk/image/upload/v1669561508/image_6_jknjxd.png"
-                           className="img-fluid rounded-start"
-                           alt="..."
-                        />
-                     </div>
-
-                     <div className="col-md-8">
-                        <div className="card-body">
-                           <h5 className="card-title">
-                              Yang hilang dari pidato kenegaraan jokowi
-                           </h5>
-                           <p className="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-                  )
-               })}
-               {/* <div className="card mb-3" style={{ maxWidth: "750px" }}>
-                  <div className="row g-0">
-                     <div className="col-md-4">
-                        <img
-                           src="https://res.cloudinary.com/ddhkwq4zk/image/upload/v1669561508/image_6_jknjxd.png"
-                           className="img-fluid rounded-start"
-                           alt="..."
-                        />
-                     </div>
-
-                     <div className="col-md-8">
-                        <div className="card-body">
-                           <h5 className="card-title">
-                              Yang hilang dari pidato kenegaraan jokowi
-                           </h5>
-                           <p className="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-               <div className="card mb-3" style={{ maxWidth: "750px" }}>
-                  <div className="row g-0">
-                     <div className="col-md-4">
-                        <img
-                           src="https://res.cloudinary.com/ddhkwq4zk/image/upload/v1669561508/image_6_jknjxd.png"
-                           className="img-fluid rounded-start"
-                           alt="..."
-                        />
-                     </div>
-
-                     <div className="col-md-8">
-                        <div className="card-body">
-                           <h5 className="card-title">
-                              Yang hilang dari pidato kenegaraan jokowi
-                           </h5>
-                           <p className="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-               </div> */}
             </div>
          </div>
       </div>
-   )
+   );
 }
-export default ArtikelNewsPage
+export default ArtikelNewsPage;
