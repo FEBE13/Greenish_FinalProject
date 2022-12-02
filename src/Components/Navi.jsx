@@ -25,6 +25,7 @@ function Navi() {
     dispatch(getUser());  
   }, []);
   const [fored,setFored] = useState("")
+  const [hide,setHide] = useState("")
   
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -54,7 +55,7 @@ function Navi() {
   }, []);
   useEffect(() => {
     if (role === "user") {
-      setFored("/dashboardUser")
+      setHide("login_hide")
     }else if(role === "admin"){
       setFored("/dashboardAdmin")
     }
@@ -84,7 +85,7 @@ function Navi() {
     height="40"
     className="rounded-circle"
   />} id={alrlogin}>
-              <NavDropdown.Item><Link to={fored} className='link1'>Dashboard</Link></NavDropdown.Item>
+              <NavDropdown.Item id={hide}><Link to={fored}  className='link1'>Dashboard</Link></NavDropdown.Item>
               <NavDropdown.Item>
                 <Link to={"/profile"} className='link1' >Edit Profile</Link>
               </NavDropdown.Item>
