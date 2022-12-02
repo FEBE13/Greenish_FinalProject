@@ -1,13 +1,18 @@
+import Lottie from "lottie-react";
+import tutorial from "../assets/tutorial.json";
+
 function TutorialNewsPage() {
-    return (
-        <div className="container Tutorial1NewsPage">
-            <h1>Our Tutorial</h1>
-            
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+   return (
+      <div className="container Tutorial1NewsPage">
+         <h1>Our Tutorial</h1>
+         <center>
+            <Lottie style={{ maxWidth: "700px" }} animationData={tutorial} />
+         </center>
+         <div className="row row-cols-1 row-cols-md-3 g-4">
             <div className="col">
                <div className="card h-100">
                   <iframe
-                  className="videoyt"
+                     className="videoyt"
                      src="https://www.youtube.com/embed/-UDCt8zRYhQ"
                      title="YouTube video player"
                      frameBorder="0"
@@ -16,9 +21,8 @@ function TutorialNewsPage() {
                   ></iframe>
                   <div className="card-body">
                      <h5 className="card-title">
-                       Cara mencegah kebakaran hutan
+                        Cara mencegah kebakaran hutan
                      </h5>
-                     
                   </div>
                </div>
             </div>
@@ -37,7 +41,6 @@ function TutorialNewsPage() {
                      <h5 className="card-title">
                         Cara menanggulangi jika terkena banjir
                      </h5>
-
                   </div>
                </div>
             </div>
@@ -57,10 +60,9 @@ function TutorialNewsPage() {
                   </div>
                </div>
             </div>
-         </div>
-
-        </div>
-
-    );
+                     
+         </div>
+      </div>
+   );
 }
-export default TutorialNewsPage
+export default TutorialNewsPage;
