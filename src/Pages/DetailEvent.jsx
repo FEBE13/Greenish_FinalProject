@@ -164,7 +164,7 @@ function DetailEvent() {
           <div className="person">
             <p
               style={{
-                fontSize: "18px",
+                fontSize: "15px",
                 fontWeight: "500",
               }}
             >
@@ -174,7 +174,7 @@ function DetailEvent() {
           <div className="person">
             <p
               style={{
-                fontSize: "18px",
+                fontSize: "15px",
                 fontWeight: "500",
               }}
             >
@@ -190,6 +190,7 @@ function DetailEvent() {
                               fontSize: "28px",
                               fontWeight: "500",
                               marginBottom: "30px",
+                              padding:'10px'
                            }}
                         >
                            {item.name}
@@ -200,6 +201,7 @@ function DetailEvent() {
                               color: "black",
                               fontSize: "25px",
                               fontWeight: "400",
+                              padding:'10px'
                            }}
                         >
                            Event Organizer
@@ -252,17 +254,18 @@ function DetailEvent() {
             fontSize: "25px",
             fontWeight: "400",
             marginBottom: "10px",
+            padding:'10px'
           }}
         >
           Location and Date Event
         </h2>
         <div
           className="place"
-          style={{ display: "flex", alignItems: "center", paddingLeft: "10px" }}
+          style={{ display: "flex", alignItems: "center", padding: "10px"}}
         >
           <i
             style={{ fontSize: "22px", fontWeight: "300", fontStyle: "normal" }}
-            className="uil uil-location-point"
+            className="uil uil-location-point" id="uil"
           >
             {" "}
             : {item.place}
@@ -281,11 +284,11 @@ function DetailEvent() {
         </div>
         <div
           className="place"
-          style={{ display: "flex", alignItems: "center", paddingLeft: "10px" }}
+          style={{ display: "flex", alignItems: "center", padding: "10px"}}
         >
           <i
             style={{ fontSize: "22px", fontWeight: "300", fontStyle: "normal" }}
-            className="uil uil-calendar-alt"
+            className="uil uil-calendar-alt" id="uil"
           >
             {" "}
             : {datee}
@@ -294,11 +297,11 @@ function DetailEvent() {
         </div>
         <div
           className="place"
-          style={{ display: "flex", alignItems: "center", paddingLeft: "10px" }}
+          style={{ display: "flex", alignItems: "center", padding: "10px" }}
         >
           <i
             style={{ fontSize: "22px", fontWeight: "300", fontStyle: "normal" }}
-            className="uil uil-building"
+            className="uil uil-building" id="uil"
           >
             {" "}
             : {item.organizer}
@@ -322,7 +325,7 @@ function DetailEvent() {
             textAlign: "justify",
             fontSize: "18px",
             fontWeight: "400",
-            paddingLeft: "10px",
+            padding: "10px",
           }}
         >
           {item.desc}

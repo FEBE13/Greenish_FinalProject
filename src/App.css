@@ -27,6 +27,11 @@
       margin-top: 18px;
    }
 }
+@media only screen and (max-width: 377px) {
+   #uil{
+      margin: auto;
+   }
+}
 #login_show {
    display: block;
 }
