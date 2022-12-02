@@ -25,9 +25,10 @@ function EventHomePage() {
                      }}
                      key={item._id}
                      className="col-lg-4  col-xs-12 card text-white card-event-homepage"
+                     style={{ cursor: "pointer" }}
                   >
                      <img
-                     style={{height: "300px"}}
+                        style={{ height: "300px" }}
                         className="img-event-homepage"
                         src={item.poster}
                         alt=""

@@ -28,6 +28,7 @@ function InformasiHomePage() {
                         nav(`/articles/${itemArticles._id}`);
                      }}
                      key={itemArticles._id}
+                     style={{ cursor: "pointer" }}
                   >
                      <div className="card h-100">
                         <img
