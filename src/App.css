@@ -271,3 +271,7 @@ h2 {
    max-height: 250px;
    overflow-y: scroll;
 }
+
+.container-aboutus {
+   margin: 10px;
+}
