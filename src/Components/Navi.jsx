@@ -86,7 +86,7 @@ function Navi() {
   />} id={alrlogin}>
               <NavDropdown.Item><Link to={fored} className='link1'>Dashboard</Link></NavDropdown.Item>
               <NavDropdown.Item>
-                <Link className='link1'>Edit Profile</Link>
+                <Link to={"/profile"} className='link1' >Edit Profile</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
                 <Link className='link1' onClick={handleSignout}>Sign Out</Link>

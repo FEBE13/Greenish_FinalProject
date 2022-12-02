@@ -42,3 +42,8 @@ export const deleteUser = (id) => {
         axios.delete(`https://begreenishfinalproject-production.up.railway.app/users/${id}`)
     }
 }
+export const updateUser = (id,data) => {
+    return () =>{
+        axios.put(`https://begreenishfinalproject-production.up.railway.app/users/${id}`,data)
+    }
+}
