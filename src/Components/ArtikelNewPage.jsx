@@ -32,9 +32,14 @@ function ArtikelNewsPage() {
                      penerbangan untuk sampai ke kota ini. Setelah sampai kota
                      Sorong
                   </p>
-                  <button onClick={() => {
-                     nav(`/articles/6384d5a83a5f1ba5f9185dac`)
-                  }} className="btn-readmore-news">Read more</button>
+                  <button
+                     onClick={() => {
+                        nav(`/articles/6384d5a83a5f1ba5f9185dac`);
+                     }}
+                     className="btn-readmore-news"
+                  >
+                     Read more
+                  </button>
                </div>
             </div>
             <div className="col-lg-6 col-xs-12 artikel-news-page-kanan">
@@ -47,7 +52,7 @@ function ArtikelNewsPage() {
                            }}
                            key={item._id}
                            className="card mb-3"
-                           style={{ maxWidth: "750px" }}
+                           style={{ maxWidth: "750px", cursor: "pointer" }}
                         >
                            <div className="row g-0">
                               <div className="col-md-4">
