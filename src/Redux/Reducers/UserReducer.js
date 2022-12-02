@@ -2,7 +2,7 @@ import { FETCH_START_USER, SUCCESS_GET_DATA_USER } from "../Action/UserAction";
 
 
 const init = {
-    users : [1,2,3],
+    users : [],
     loading : false
 }
 
