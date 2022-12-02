@@ -1,5 +1,8 @@
 import React from "react";
-
+import Lottie from "lottie-react";
+import wateringplant from "../assets/wateringplant.json";
+import communication from "../assets/communication.json";
+import kampanye from "../assets/kampanye.json";
 function AboutUsHomepage() {
    return (
       <div className="container">
@@ -17,10 +20,9 @@ function AboutUsHomepage() {
 
             <div className="group-card group-card-aboutus">
                <div className="card about-us-list" style={{ width: "18rem" }}>
-                  <img
-                     src="https://res.cloudinary.com/dk55ik2ah/image/upload/v1666364375/Ecology_Isometric_avcaq8.png"
-                     className="card-img-top"
-                     alt="..."
+                  <Lottie
+                     style={{ maxHeight: "300px", maxWidth: "300px" }}
+                     animationData={wateringplant}
                   />
                   <div className="card-body">
                      <div className="tittle">
@@ -37,11 +39,7 @@ function AboutUsHomepage() {
                   className="card about-us-list"
                   style={{ width: "18rem", margin: "5px 0px" }}
                >
-                  <img
-                     src="https://res.cloudinary.com/dk55ik2ah/image/upload/v1666364423/Recycling__Monochromatic_tcathb.png"
-                     className="card-img-top"
-                     alt="..."
-                  />
+                  <Lottie animationData={kampanye} />
                   <div className="card-body">
                      <h5>Membantu meningkatkan awarness terhadap sesama</h5>
                      <p className="card-text">
@@ -52,11 +50,7 @@ function AboutUsHomepage() {
                   </div>
                </div>
                <div className="card about-us-list" style={{ width: "18rem" }}>
-                  <img
-                     src="https://res.cloudinary.com/dk55ik2ah/image/upload/v1666364446/Customer_Service_Monochromatic_atbaq1.png"
-                     className="card-img-top"
-                     alt="..."
-                  />
+                  <Lottie animationData={communication} />
                   <div className="card-body">
                      <h5>Kami menjamin komunikasi antar sesama</h5>
                      <p className="card-text">

@@ -1,11 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Lottie from "lottie-react";
+import lovenature from "../assets/lovenature.json";
 function BannerHomePage() {
    const nav = useNavigate();
    return (
       <div className="container banner-awal">
          <div className="row" style={{ maxWidth: "100%", margin: "auto" }}>
-            <div className="col text-banner">
+            <div className="col-lg-6 col-xs-12 text-banner">
                <h3
                   style={{
                      color: "#686868",
@@ -56,11 +58,8 @@ function BannerHomePage() {
                   </button>
                </div>
             </div>
-            <div className="col img-banner" style={{}}>
-               <img
-                  src="https://res.cloudinary.com/dk55ik2ah/image/upload/v1669162563/bro_bqjqoy.jpg"
-                  alt=""
-               />
+            <div className="col-lg-6 col-xs-12 img-banner" style={{}}>
+               <Lottie animationData={lovenature} />
             </div>
          </div>
       </div>

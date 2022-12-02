@@ -27,14 +27,14 @@ function EventHomePage() {
                      className="col-lg-4  col-xs-12 card text-white card-event-homepage"
                   >
                      <img
+                     style={{height: "300px"}}
                         className="img-event-homepage"
                         src={item.poster}
                         alt=""
                      />
                      <div className="text-event-homepage card-img-overlay">
                         <h4>{item.name}</h4>
-                        <p>{item.desc}</p>
-                        <button className="btn-event-homepage">See more</button>
+                        <p>{item.desc ? item.desc.slice(0, 100) : ""}</p>
                      </div>
                   </div>
                );

@@ -27,8 +27,8 @@ function ContentAboutus() {
                         alt="..."
                      />
                   </div>
-                  <div className="col-md-6">
-                     <div className="card-body content-teks teks2">
+                  <div className="col-md-6 bg-img">
+                     <div className="card-body content-teks teks3">
                         <h5 className="card-title">
                            Kami berusaha menjaga alam
                         </h5>
@@ -53,12 +53,11 @@ function ContentAboutus() {
                style={{ maxWidth: "max-content" }}
             >
                <div className="row g-0">
-                  <div className="col-md-6">
+                  <div className="col-md-6 bg-img">
                      <div className="card-body content-teks teks3">
                         <h5 className="card-title">
                            Kami mengkampanyekan kurangi penggunaan plastik
                         </h5>
-                        <span>
                            <p className="card-text text-content align-middle ">
                               Sebagai upaya mengurangi penggunaan plastik, kami
                               melakukan sosialisasi untuk setiap berpergian
@@ -72,7 +71,6 @@ function ContentAboutus() {
                               sampah yang berserakan di sungai dan pinggir
                               jalan.
                            </p>
-                        </span>
                      </div>
                   </div>
                   <div className="col-md-6">
@@ -97,12 +95,12 @@ function ContentAboutus() {
                         alt="..."
                      />
                   </div>
-                  <div className="col-md-6">
-                     <div className="card-body content-teks teks2">
+                  <div className="col-md-6 bg-img">
+                     <div className="card-body content-teks teks3">
                         <h5 className="card-title">
                            Kami berusaha membantu sesama ketika mendapat musibah
                         </h5>
-                        <p className="card-text align-middle">
+                        <p className="card-text align-middle text-content">
                            Sebagai upaya membantu sesama yang sedang terkena
                            musibah, kami melakukan event untuk mendapatkan
                            relawan yang siap dikirim ke tempat yang terkena

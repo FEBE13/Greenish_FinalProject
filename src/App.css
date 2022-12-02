@@ -27,10 +27,10 @@
       margin-top: 18px;
    }
 }
-#login_show{
+#login_show {
    display: block;
 }
-#login_hide{
+#login_hide {
    display: none;
 }
 
@@ -41,30 +41,33 @@
    border-radius: 0px 0px 50px 0px;
    color: white;
 }
-.banner-awal{
+.banner-awal {
    padding: 100px 0;
    max-width: 900px;
 }
- .text-banner{
+.text-banner {
    margin: auto;
    padding-top: 60px;
-      /* padding-right: 80px; */
-   }
-   .img-banner {
-      margin: auto;
-   }
+   /* padding-right: 80px; */
+}
+.img-banner {
+   margin: auto;
+}
 
-
-.text-banner > h1,h3,div {
+.text-banner > h1,
+h3,
+div {
    text-align: left;
 }
 @media only screen and (max-width: 576px) {
 }
 @media only screen and (max-width: 992px) {
-   .text-banner > h1,h3,div {
+   .text-banner > h1,
+   h3,
+   div {
       text-align: center;
    }
-   .text-banner{
+   .text-banner {
       max-width: 300px;
       margin: auto;
       padding-top: 0;
@@ -75,12 +78,12 @@
    /* .text-banner{
       padding: 0;
    } */
-   
+
    /* .banner-awal{
       padding: 0;
    } */
 }
-.jelajahi:hover{
+.jelajahi:hover {
    border-radius: 30px;
    transition: ease-in-out 0.5s;
    background-color: #0284c7;
@@ -209,8 +212,9 @@ h2 {
    padding: 0px;
    padding: 0px 10px;
 }
-.teks3 {
-   margin-top: 40px;
+.bg-img {
+   /* margin-top: 40px; */
+   background-image: url("https://res.cloudinary.com/dk55ik2ah/image/upload/o_30/v1669907552/13994615_5411030-removebg-preview_wdtnqw.png");
 }
 
 @media only screen and (max-width: 724px) {
@@ -220,10 +224,8 @@ h2 {
    }
 }
 
-
-.carde:hover{
-   box-shadow:  7px 7px 14px #cccccc,
-             -7px -7px 14px #f4f4f4;
+.carde:hover {
+   box-shadow: 7px 7px 14px #cccccc, -7px -7px 14px #f4f4f4;
 }
 
 .Content1NewsPage {
@@ -233,7 +235,7 @@ h2 {
 }
 .Tutorial1NewsPage {
    text-align: center;
-   margin-top: 50px
+   margin-top: 50px;
    /* padding: 100px;
    margin: 50px; */
 }
@@ -248,7 +250,7 @@ h2 {
    color: white;
    padding: 6px;
 }
-.img-artikel-newspage-kanan{
+.img-artikel-newspage-kanan {
    margin-top: 5px;
 }
 
@@ -265,3 +267,11 @@ h2 {
    }
 }
 
+.ScrollStyle {
+   max-height: 250px;
+   overflow-y: scroll;
+}
+
+.container-aboutus {
+   margin: 10px;
+}
