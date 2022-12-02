@@ -78,7 +78,7 @@ function DetailEvent() {
     function eventregis(e) {
       e.preventDefault()
       dispatch(postParticipant(posting))
-      alert("behasil daftar event ! ")
+      alert("behasil daftar event !, tunggu informasi selanjutnya dari penyelenggara  ")
       window.location.reload()
     }
     return (
