@@ -14,6 +14,7 @@ import DashboardUser from "./Pages/DashboardUser";
 import PostAdmin from "./Pages/PostAdmin";
 import PostArticle from "./Pages/PostArticle";
 import PostEvent from "./Pages/PostEvent";
+import EditProfile from "./Pages/EditProfile";
 
 function App() {
    return (
@@ -34,7 +35,7 @@ function App() {
             <Route path="/pstam" element={<PostAdmin />} />
             <Route path="/pstar" element={<PostArticle />} />
             <Route path="/pstev" element={<PostEvent />} />
-            {/* <Route path="/register" element={<Register />} /> */}
+            <Route path="/profile" element={<EditProfile />} />
             {/* <Route path="*" element={<NotFound />} /> */}
             
          </Routes>
