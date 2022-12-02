@@ -9,7 +9,7 @@ import Navi from '../Components/Navi'
 
 function Homepages() {
   return (
-    <div>
+    <div >
         <Navi/>
         <BannerHomePage />
         <AboutUsHomepage />

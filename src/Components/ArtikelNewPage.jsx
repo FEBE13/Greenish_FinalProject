@@ -39,7 +39,7 @@ function ArtikelNewsPage() {
             </div>
             <div className="col-lg-6 col-xs-12 artikel-news-page-kanan">
                <div className="ScrollStyle">
-                  {item.slice(1, 3).map((item, index) => {
+                  {item.slice(1, 10).map((item, index) => {
                      return (
                         <div
                            onClick={() => {
