@@ -8,10 +8,10 @@ import { getUser, updateUser } from "../Redux/Action/UserAction";
 function EditProfile() {
     const user = useSelector((state) => state.User);
     const dispatch = useDispatch()
+    const nav = useNavigate()
     const [userid,setUserid] = useState()
     const [name,setName] = useState()
     const[email,setEmail] = useState()
-    const nav = useNavigate()
 
 
     const data = {
