@@ -29,6 +29,7 @@ function DashboardAdmin() {
     dispatch(getEvent())
     
   },[])
+
   
 // console.log(event)
   function deleteData(id) {
@@ -145,6 +146,33 @@ function DashboardAdmin() {
               <td>{item.author}</td>
               {/* <td><input type="password" value={item.pass} disabled style={{border:'none'}} id="" /></td> */}
               <td> <Button onClick={()=>{deleteDataArt(item._id)}}>Delete</Button> </td>
+            </tr>      
+          )
+        })}
+        
+      </tbody>
+    </Table>
+    <h2 style={{color:'black'}}>Participant</h2>
+      <Table striped="columns" responsive>
+      <thead>
+      
+        <tr>
+          <th>ID</th>
+          <th>Judul Event</th>
+          <th>Email Peserta</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        {participant.partis == null ? "" : participant.partis.map((item)=>{
+          return(
+            <tr>
+              <td>{item._id}</td>
+              <td>{item.id_event.name}</td>
+              <td>{item.id_user.email}</td>
+              <td>{item.phone}</td>
+              {/* <td><input type="password" value={item.pass} disabled style={{border:'none'}} id="" /></td> */}
+              
             </tr>      
           )
         })}
