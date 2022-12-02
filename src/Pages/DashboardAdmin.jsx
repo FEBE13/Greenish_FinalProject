@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteUser, getUser } from '../Redux/Action/UserAction';
 import { deleteEvent, getEvent } from '../Redux/Action/EventAction';
 import { deleteArticle, getArticles } from '../Redux/Action/ArticlesAction';
+import { getParti } from '../Redux/Action/PartiAction';
 
 function DashboardAdmin() {
   const dispatch = useDispatch()
@@ -16,10 +17,13 @@ function DashboardAdmin() {
   const user = useSelector((state) => state.User);
   const article = useSelector((state) => state.Articles);
   const event = useSelector((state) => state.Event);
+  const participant = useSelector((state) => state.Parti);
 
   useEffect(()=>{
     dispatch(getArticles())
     dispatch(getUser())
+    dispatch(getParti())
+
   },[])
   useEffect(()=>{
     dispatch(getEvent())
