@@ -4,6 +4,7 @@ import EventReducer from "../Reducers/EventReducer";
 import UserReducer from "../Reducers/UserReducer";
 import ArticlesReducer from "../Reducers/ArticlesReducer";
 import AuthReducer from "../Reducers/AuthReducer";
+import PartiReducer from "../Reducers/PartiReducer";
 
 
 const allReducer = combineReducers({
@@ -11,9 +12,7 @@ const allReducer = combineReducers({
    User: UserReducer,
    Articles: ArticlesReducer,
    Auth : AuthReducer,
-
-   // user: userReducer,
-   // product: productReducer
+   Parti: PartiReducer
 });
 
 const store = createStore(allReducer, applyMiddleware(thunk));
